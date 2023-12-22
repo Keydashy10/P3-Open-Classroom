@@ -117,7 +117,14 @@ h2{
 	font-weight: 700;
 	line-height: normal;
 	min-width: 100px;
-
+}
+.modif{
+	text-decoration: none;
+    font-weight: 400;
+    font-size: 14px;
+	margin-left: 24px;
+	color: #000;
+	font-family: 'Work Sans', sans-serif;
 }
 .filters button:hover{
 	border: 1px solid #1D6154;
@@ -178,6 +185,7 @@ li:hover {
 #portfolio h2 {
 	text-align: center;
 	margin-bottom: 1em;
+	margin-left: 24px;
 }
 .gallery {
 	width: 100%;

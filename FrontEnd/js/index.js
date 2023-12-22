@@ -7,12 +7,32 @@ function init(){
             <i class="fa-regular fa-pen-to-square"></i>Mode édition
          </div>`)
 
+        const modify = document.querySelector('#portfolio h2')
+        modify.insertAdjacentHTML('beforeend',
+        `<a  href="#" class="modif">
+        <i class="fa-regular fa-pen-to-square"></i> modifier
+         </a>
+        `)
+
+        // const modifya = document.createElement('a')
+        // modifya.innerHTML = `<div class="edition-mode">
+        // <i class="fa-regular fa-pen-to-square"></i> modifier
+        // </div>` 
+        // document.body.getElementById('portfolio').appendChild(modifya)
+
         document.querySelector('header').classList.add('header-connect')
         const tous= document.querySelector('.filters button')
         // On supprime le bouton "tous"
         tous.remove()  
          // on remplace le text "login" par "logout"
         document.getElementById('login').innerHTML = "logout" 
+
+        const deco= document.getElementById('login')
+        deco.addEventListener('click', (e)=>{
+            e.preventDefault()
+            localStorage.removeItem("token")
+            document.location.reload()
+        })
     }
     if(!token){
        getCategories() 
