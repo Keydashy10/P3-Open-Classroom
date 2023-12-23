@@ -99,8 +99,41 @@ h1 > span {
 h2{
 	font-family: 'Syne';
 	font-weight: 700;
-	font-size: 30px;
+	font-size: 26px;
 	color: #1D6154
+}
+#modale{
+	width: 630px;
+	height: 688px;
+	padding: 40px;
+}
+#modale i {
+	height: 24px;
+	width: 24px;
+}
+
+.modal{
+	font-family: 'Work Sans';
+	font-weight: 400;
+	color: #000;
+	text-align: center;
+	padding-bottom: 50px;
+}
+.add-photo{
+	border-radius: 60px;
+	width: 237px;
+	height: 36px;
+	background-color: #1D6154;
+	
+}
+.add-photo p {
+	color: #FFF;
+	font-family: 'Syne';
+	font-weight: 700px;
+	font-size: 14px;
+	text-align: center;
+	margin-top: 20px;
+	padding-top: 11px;
 }
 .filters button{
 	display: block;
@@ -199,6 +232,20 @@ li:hover {
 	width: 100%;
 
 }
+#contenu-modale {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	/* grid-column-gap: 5px;
+	grid-row-gap: 20px; */
+	gap: 5px;
+}
+
+#contenu-modale img {
+	width: 77px;
+	height: 102px;
+}
+
 #contact {
 	width: 50%;
 margin: auto;
