@@ -1,0 +1,14 @@
+{
+  "name": "branodn.tes",
+  "version": "1.0.0",
+  "description": "Projet N°3 Openclassroom",
+  "main": "index.js",
+  "scripts": {
+    "test": "tesst"
+  },
+  "keywords": [
+    "Brtandon"
+  ],
+  "author": "Brandon",
+  "license": "ISC"
+}
