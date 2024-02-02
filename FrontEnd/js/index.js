@@ -112,6 +112,12 @@ async function getCategories() {
         } else {
           figure.style.display = "none";
         }
+
+        // Si l'utilisateur à cliqué sur "tous" (catégory 0)
+        if(categoryId == 0){
+          figure.style.display = "block"
+        }
+
       });
     });
   });
@@ -236,7 +242,13 @@ const submitButton = document.querySelector(".submitButton");
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();
 
-  addWork();
+  // On vérifie si tous les champs sont remplis
+  const isEverythingOk = verifierFormulaire()
+
+  if(isEverythingOk){
+    addWork();
+  }
+
 });
 
 // Fonction addWork
@@ -287,14 +299,24 @@ verifierFormulaire()
     document.querySelector('#add-photos').close()
 }
 function verifierFormulaire() {
+  let isEverythingOk = true;
+  // Reset des messages d'erreur
+  const allErroMessage = document.querySelectorAll('.error')
+  allErroMessage.forEach(error => {
+    error.remove()
+  })
+
   // Vérifier si une image a été sélectionnée
   if (document.querySelector("#preview").src == "") {
       afficherMessageErreur(".image-fieldset", "Vous devez renseigner l'image");
+      isEverythingOk = false
   }
 
   // Vérifier si un titre a été donné
   if (document.querySelector("#title").value == "") {
       afficherMessageErreur("#title", "Vous devez renseigner le titre");
+      isEverythingOk = false
+
   }
 
   // Vérifier si une catégorie a été attribuée
@@ -304,7 +326,9 @@ function verifierFormulaire() {
   if (categorieSelectionnee == "") {
       afficherMessageErreur("#category", "Veuillez renseigner une catégorie");
       console.log("Veuillez sélectionner une catégorie.");
+      isEverythingOk = false
   } 
+  return isEverythingOk
 }
 
 function afficherMessageErreur(selecteur, message) {

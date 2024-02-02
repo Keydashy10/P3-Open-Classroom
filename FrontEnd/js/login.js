@@ -33,7 +33,11 @@
         if(token){
             localStorage.setItem("token", token)
             document.location.href = "index.html"
+        } else {
+            alert('Vous devez renseigner un mail et un mot de passe valide')
         }
+
+
        
         // Si les donnée sont correctes, on récupère le token qu'on va stocker (localStorage)
             // > On redirige l'utilisateur sur la page d'accueil
